@@ -14,7 +14,8 @@
  * @param {Number} armorPenetration 防御力貫通
  * @return {Number} ダメージ
  */
-functino effectiveDamage(power, armor, armorPenetration) {
+function effectiveDamage(power, armor, armorPenetration)
+{
   let effectiveArmor = normalize(armor) - normalize(armorPenetration);
   effectiveArmor = effectiveArmor <= 0 ? 0 : effectiveArmor;
   const damageDecrease = effectiveArmor / (100 + effectiveArmor);
@@ -26,12 +27,16 @@ functino effectiveDamage(power, armor, armorPenetration) {
  * @param {Number} n 異常な可能性のある入力値
  * @return {Number} 正常値
  */
-function normalize(n) {
-  if (n < 0) {
+function normalize(n)
+{
+  if (n < 0)
+  {
     return 0;
-  } else if (n >= 2000) {
+  } else if (n >= 2000)
+  {
     return 2000;
-  } else {
+  } else
+  {
     return n;
   }
 }
