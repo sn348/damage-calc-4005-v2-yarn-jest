@@ -22,10 +22,10 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
         
       - run:
-          name:Install Junit coverage reporter
+          name: Install Junit coverage reporter
           command: yarn add --dev jest-junit
       - run:
-          name:Run tests with Junit as reporter
+          name: Run tests with Junit as reporter
           command: npx jest --ci --runInBand --reporters=default --reporters=jest-junit
           environment:
               JEST_JUNIT_OUTPUT_DIR: "./junit/test-results.xml"
